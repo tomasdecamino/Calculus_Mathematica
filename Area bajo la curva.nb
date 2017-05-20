@@ -1,0 +1,550 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20584,        540]
+NotebookOptionsPosition[     20152,        519]
+NotebookOutlinePosition[     20511,        535]
+CellTagsIndexPosition[     20468,        532]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Area bajo la curva", "Subsubsection",
+ CellChangeTimes->{{3.700125948172002*^9, 3.700125957617305*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"left", "[", 
+   RowBox[{"f_", ",", "x_", ",", "n_", ",", "h_", ",", "type_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"bottom", "[", 
+        RowBox[{"n", ",", "h"}], "]"}]}]}], ",", 
+     RowBox[{"f", "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"bottom", "[", 
+        RowBox[{
+         RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}], ",", 
+     RowBox[{"f", "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{
+        RowBox[{"bottom", "[", 
+         RowBox[{"n", ",", "h"}], "]"}], "+", 
+        RowBox[{".5", "h"}]}]}]}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"f", "/.", 
+          RowBox[{"x", "\[Rule]", 
+           RowBox[{"bottom", "[", 
+            RowBox[{"n", ",", "h"}], "]"}]}]}], ")"}], "<", 
+        RowBox[{"(", 
+         RowBox[{"f", "/.", 
+          RowBox[{"x", "\[Rule]", 
+           RowBox[{"bottom", "[", 
+            RowBox[{
+             RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}], ")"}]}], ",", 
+       RowBox[{"f", "/.", 
+        RowBox[{"x", "\[Rule]", 
+         RowBox[{"bottom", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}], ",", 
+       RowBox[{"f", "/.", 
+        RowBox[{"x", "\[Rule]", 
+         RowBox[{"bottom", "[", 
+          RowBox[{"n", ",", "h"}], "]"}]}]}]}], "]"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"f", "/.", 
+          RowBox[{"x", "\[Rule]", 
+           RowBox[{"bottom", "[", 
+            RowBox[{"n", ",", "h"}], "]"}]}]}], ")"}], "<", 
+        RowBox[{"(", 
+         RowBox[{"f", "/.", 
+          RowBox[{"x", "\[Rule]", 
+           RowBox[{"bottom", "[", 
+            RowBox[{
+             RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}], ")"}]}], ",", 
+       RowBox[{"f", "/.", 
+        RowBox[{"x", "\[Rule]", 
+         RowBox[{"bottom", "[", 
+          RowBox[{"n", ",", "h"}], "]"}]}]}], ",", 
+       RowBox[{"f", "/.", 
+        RowBox[{"x", "\[Rule]", 
+         RowBox[{"bottom", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}]}], "]"}], ",", 
+     RowBox[{"f", "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"bottom", "[", 
+        RowBox[{"n", ",", "h"}], "]"}]}]}]}], "}"}], "[", 
+   RowBox[{"[", "type", "]"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"right", "[", 
+   RowBox[{"f_", ",", "x_", ",", "n_", ",", "h_", ",", "type_"}], "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"type", "\[Equal]", "6"}], ",", 
+    RowBox[{"f", "/.", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"bottom", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "h"}], "]"}]}]}], ",", 
+    RowBox[{"left", "[", 
+     RowBox[{"f", ",", "x", ",", "n", ",", "h", ",", "type"}], "]"}]}], 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"bottom", "[", 
+   RowBox[{"0", ",", "h_"}], "]"}], ":=", "0"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bottom", "[", 
+   RowBox[{"n_", ",", "h_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"bottom", "[", 
+    RowBox[{
+     RowBox[{"n", "-", "1"}], ",", "h"}], "]"}], "+", "h"}]}], "\n", 
+ RowBox[{
+  RowBox[{"rectangle", "[", 
+   RowBox[{"f_", ",", "x_", ",", "n_", ",", "h_", ",", "type_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"EdgeForm", "[", "Thin", "]"}], ",", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"0", ",", 
+      RowBox[{"1", "-", 
+       RowBox[{"n", "/", "20"}]}], ",", 
+      RowBox[{"n", "/", "20"}]}], "]"}], ",", 
+    RowBox[{"Polygon", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"bottom", "[", 
+          RowBox[{"n", ",", "h"}], "]"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"bottom", "[", 
+          RowBox[{"n", ",", "h"}], "]"}], ",", 
+         RowBox[{"left", "[", 
+          RowBox[{"f", ",", "x", ",", "n", ",", "h", ",", "type"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"bottom", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "1"}], ",", "h"}], "]"}], ",", 
+         RowBox[{"right", "[", 
+          RowBox[{"f", ",", "x", ",", "n", ",", "h", ",", "type"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"bottom", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "1"}], ",", "h"}], "]"}], ",", "0"}], "}"}]}], 
+      "}"}], "]"}]}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"estimatedArea", "[", 
+   RowBox[{"f_", ",", "x_", ",", "n_", ",", "h_", ",", "type_"}], "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"bottom", "[", 
+          RowBox[{"i", ",", "h"}], "]"}], "-", 
+         RowBox[{"bottom", "[", 
+          RowBox[{
+           RowBox[{"i", "+", "1"}], ",", "h"}], "]"}]}], "]"}], "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"left", "[", 
+           RowBox[{"f", ",", "x", ",", "i", ",", "h", ",", "type"}], "]"}], 
+          "+", 
+          RowBox[{"right", "[", 
+           RowBox[{"f", ",", "x", ",", "i", ",", "h", ",", "type"}], "]"}]}], 
+         ")"}], "/", "2"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "0", ",", 
+        RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", "3"}], 
+   "]"}]}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{"f", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "8"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"Grid", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<estimated area: \>\"", "<>", " ", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"estimatedArea", "[", 
+               RowBox[{"f", ",", "x", ",", "n", ",", 
+                RowBox[{"a", "/", "n"}], ",", "type"}], "]"}], "]"}]}], "}"}],
+            ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<integral: \>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"N", "[", 
+               RowBox[{
+                RowBox[{
+                 SubsuperscriptBox["\[Integral]", "0", "a"], 
+                 RowBox[{"f", 
+                  RowBox[{"\[DifferentialD]", "x"}]}]}], ",", "3"}], "]"}], 
+              "]"}]}], "}"}]}], "}"}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"f", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "a"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", 
+       RowBox[{"Filling", "\[Rule]", 
+        RowBox[{"1", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{"Opacity", "[", 
+            RowBox[{".25", ",", "Blue"}], "]"}]}], "}"}]}]}]}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Opacity", "[", ".4", "]"}], ",", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"rectangle", "[", 
+           RowBox[{"f", ",", "x", ",", "i", ",", 
+            RowBox[{"a", "/", "n"}], ",", "type"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "0", ",", 
+            RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}], "]"}], ",", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"a", ",", "150"}], "}"}]}], "}"}], "]"}]}], "}"}], "]"}], 
+     ",", 
+     RowBox[{"ImageSize", "\[Rule]", "360"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f", ",", "x", ",", "\"\<function\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "\[Rule]", "\"\<x\>\""}], ",", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"x", "-", "3"}], ")"}], "2"], "\[Rule]", 
+        "\"\<(x-3\!\(\*SuperscriptBox[\()\), \(2\)]\)\>\""}], ",", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"x", "-", "3"}], ")"}], "3"], "+", "27"}], "\[Rule]", 
+        "\"\<(x-3\!\(\*SuperscriptBox[\()\), \(3\)]\)+27\>\""}], ",", 
+       RowBox[{
+        SqrtBox["x"], "\[Rule]", "\"\<\!\(\*SqrtBox[\(x\)]\)\>\""}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Sin", "[", "x", "]"}], "+", "1"}], "\[Rule]", 
+        "\"\<sin(x)+1\>\""}], ",", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"x", "/", "3"}]], "\[Rule]", 
+        "\"\<\!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x/3\)]\)\>\""}]}], 
+      "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "SetterBar"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"type", ",", "2", ",", "\"\<type\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[Rule]", "\"\<left\>\""}], ",", 
+       RowBox[{"2", "\[Rule]", "\"\<right\>\""}], ",", 
+       RowBox[{"3", "\[Rule]", "\"\<midpoint\>\""}], ",", 
+       RowBox[{"4", "\[Rule]", "\"\<overestimate\>\""}], ",", 
+       RowBox[{"5", "\[Rule]", "\"\<underestimate\>\""}], ",", 
+       RowBox[{"6", "\[Rule]", "\"\<trapezoidal\>\""}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "SetterBar"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "5", ",", "\"\<upper limit a\>\""}], "}"}], ",", 
+     "0.01", ",", "8", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "3", ",", "\"\<number of quadrilaterals\>\""}], "}"}],
+      ",", "1", ",", "20", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellID->579772341],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 
+    7.51, $CellContext`f$$ = (-3 + $CellContext`x)^2, $CellContext`n$$ = 
+    20, $CellContext`type$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`f$$], $CellContext`x, "function"}, {$CellContext`x -> 
+       "x", (-3 + $CellContext`x)^2 -> 
+       "(x-3\!\(\*SuperscriptBox[\()\), \(2\)]\)", 
+       27 + (-3 + $CellContext`x)^3 -> 
+       "(x-3\!\(\*SuperscriptBox[\()\), \(3\)]\)+27", $CellContext`x^
+        Rational[1, 2] -> "\!\(\*SqrtBox[\(x\)]\)", 1 + Sin[$CellContext`x] -> 
+       "sin(x)+1", E^(Rational[1, 3] $CellContext`x) -> 
+       "\!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x/3\)]\)"}}, {{
+       Hold[$CellContext`type$$], 2, "type"}, {
+      1 -> "left", 2 -> "right", 3 -> "midpoint", 4 -> "overestimate", 5 -> 
+       "underestimate", 6 -> "trapezoidal"}}, {{
+       Hold[$CellContext`a$$], 5, "upper limit a"}, 0.01, 8}, {{
+       Hold[$CellContext`n$$], 3, "number of quadrilaterals"}, 1, 20, 1}}, 
+    Typeset`size$$ = {360., {125., 130.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`f$2233$$ = False, $CellContext`type$2234$$ = 
+    False, $CellContext`a$2235$$ = 0, $CellContext`n$2236$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 
+        5, $CellContext`f$$ = $CellContext`x, $CellContext`n$$ = 
+        3, $CellContext`type$$ = 2}, "ControllerVariables" :> {
+        Hold[$CellContext`f$$, $CellContext`f$2233$$, False], 
+        Hold[$CellContext`type$$, $CellContext`type$2234$$, False], 
+        Hold[$CellContext`a$$, $CellContext`a$2235$$, 0], 
+        Hold[$CellContext`n$$, $CellContext`n$2236$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[$CellContext`f$$, {$CellContext`x, 0, 8}, PlotStyle -> Black, 
+         PlotLabel -> Grid[{{
+             StringJoin["estimated area: ", 
+              ToString[
+               $CellContext`estimatedArea[$CellContext`f$$, $CellContext`x, \
+$CellContext`n$$, $CellContext`a$$/$CellContext`n$$, $CellContext`type$$]]]}, {
+             StringJoin["integral: ", 
+              ToString[
+               N[
+                
+                Integrate[$CellContext`f$$, {$CellContext`x, 
+                  0, $CellContext`a$$}], 3]]]}}]], 
+        Plot[$CellContext`f$$, {$CellContext`x, 0, $CellContext`a$$}, 
+         PlotStyle -> Black, Filling -> (1 -> {0, 
+            Opacity[0.25, Blue]})], 
+        Graphics[{
+          Opacity[0.4], 
+          Table[
+           $CellContext`rectangle[$CellContext`f$$, $CellContext`x, \
+$CellContext`i, $CellContext`a$$/$CellContext`n$$, $CellContext`type$$], \
+{$CellContext`i, 0, $CellContext`n$$ - 1}]}], 
+        Graphics[{Red, 
+          Line[{{$CellContext`a$$, 0}, {$CellContext`a$$, 150}}]}], ImageSize -> 
+        360], "Specifications" :> {{{$CellContext`f$$, $CellContext`x, 
+          "function"}, {$CellContext`x -> "x", (-3 + $CellContext`x)^2 -> 
+          "(x-3\!\(\*SuperscriptBox[\()\), \(2\)]\)", 
+          27 + (-3 + $CellContext`x)^3 -> 
+          "(x-3\!\(\*SuperscriptBox[\()\), \(3\)]\)+27", $CellContext`x^
+           Rational[1, 2] -> "\!\(\*SqrtBox[\(x\)]\)", 
+          1 + Sin[$CellContext`x] -> "sin(x)+1", 
+          E^(Rational[1, 3] $CellContext`x) -> 
+          "\!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x/3\)]\)"}, 
+         ControlType -> SetterBar}, {{$CellContext`type$$, 2, "type"}, {
+         1 -> "left", 2 -> "right", 3 -> "midpoint", 4 -> "overestimate", 5 -> 
+          "underestimate", 6 -> "trapezoidal"}, ControlType -> 
+         SetterBar}, {{$CellContext`a$$, 5, "upper limit a"}, 0.01, 8, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`n$$, 3, "number of quadrilaterals"}, 1, 
+         20, 1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{440., {210., 216.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`estimatedArea[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]], 
+         Pattern[$CellContext`type, 
+          Blank[]]] := N[
+         Sum[
+         Abs[$CellContext`bottom[$CellContext`i, $CellContext`h] - \
+$CellContext`bottom[$CellContext`i + 
+             1, $CellContext`h]] (($CellContext`left[$CellContext`f, \
+$CellContext`x, $CellContext`i, $CellContext`h, $CellContext`type] + \
+$CellContext`right[$CellContext`f, $CellContext`x, $CellContext`i, \
+$CellContext`h, $CellContext`type])/2), {$CellContext`i, 0, $CellContext`n - 
+           1}], 3], $CellContext`bottom[0, 
+         Pattern[$CellContext`h, 
+          Blank[]]] := 0, $CellContext`bottom[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]]] := $CellContext`bottom[$CellContext`n - 
+          1, $CellContext`h] + $CellContext`h, $CellContext`left[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]], 
+         Pattern[$CellContext`type, 
+          Blank[]]] := Part[{
+          
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]], 
+          
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]], 
+          
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h] + 0.5 $CellContext`h], 
+          If[
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]] < 
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]], 
+           
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]], 
+           
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]]], 
+          If[
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]] < 
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]], 
+           
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]], 
+           
+           ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]]], 
+          
+          ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n, $CellContext`h]]}, $CellContext`type], \
+$CellContext`right[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]], 
+         Pattern[$CellContext`type, 
+          Blank[]]] := If[$CellContext`type == 6, 
+         ReplaceAll[$CellContext`f, $CellContext`x -> \
+$CellContext`bottom[$CellContext`n + 1, $CellContext`h]], 
+         $CellContext`left[$CellContext`f, $CellContext`x, $CellContext`n, \
+$CellContext`h, $CellContext`type]], $CellContext`rectangle[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`h, 
+          Blank[]], 
+         Pattern[$CellContext`type, 
+          Blank[]]] := {
+         EdgeForm[Thin], 
+         RGBColor[0, 1 - $CellContext`n/20, $CellContext`n/20], 
+         Polygon[{{
+            $CellContext`bottom[$CellContext`n, $CellContext`h], 0}, {
+            $CellContext`bottom[$CellContext`n, $CellContext`h], 
+            $CellContext`left[$CellContext`f, $CellContext`x, $CellContext`n, \
+$CellContext`h, $CellContext`type]}, {
+            $CellContext`bottom[$CellContext`n + 1, $CellContext`h], 
+            $CellContext`right[$CellContext`f, $CellContext`x, \
+$CellContext`n, $CellContext`h, $CellContext`type]}, {
+            $CellContext`bottom[$CellContext`n + 1, $CellContext`h], 0}}]}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.700125966758402*^9}]
+}, {2}]]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{15, Automatic}, {Automatic, 35}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 109, 1, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[714, 27, 10198, 288, 10651, "Input",
+ CellID->579772341],
+Cell[10915, 317, 9212, 198, 443, "Output"]
+}, {2}]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,181 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6259,        173]
+NotebookOptionsPosition[      5745,        150]
+NotebookOutlinePosition[      6102,        166]
+CellTagsIndexPosition[      6059,        163]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Pendiente en el punto", "Subsubsection",
+ CellChangeTimes->{{3.699872519506452*^9, 3.699872540139551*^9}, {
+  3.6998745353488607`*^9, 3.699874547585339*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "Dibujar", " ", "una", " ", "par\[AAcute]bola", " ", "en", " ", 
+    "pizarra"}], ",", " ", 
+   RowBox[{
+   "a", " ", "partir", " ", "de", " ", "la", " ", "funci\[OAcute]n", " ", 
+    SuperscriptBox["x", "2"]}]}], " "}], "\[IndentingNewLine]", 
+ RowBox[{"(", 
+  RowBox[{"hacerlo", " ", "en", " ", "pizarra"}], ")"}]}], "Text",
+ CellDingbat->"\[GraySquare]",
+ CellChangeTimes->{{3.6999024346716022`*^9, 3.699902496743628*^9}, {
+   3.6999025383006563`*^9, 3.699902578143903*^9}, 3.6999026515863237`*^9, {
+   3.699902737744487*^9, 3.69990277246769*^9}}],
+
+Cell["Encontrar la l\[IAcute]nea tangente de un punto", "Text",
+ CellDingbat->"\[FilledSquare]",
+ CellChangeTimes->{{3.699902678780863*^9, 3.69990270786268*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   SuperscriptBox["x", "2"]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6998744032708597`*^9, 3.6998744265018578`*^9}, {
+  3.6998744923592253`*^9, 3.699874510982151*^9}, {3.699874561804916*^9, 
+  3.6998745955790377`*^9}, {3.699908473049056*^9, 3.699908492588428*^9}, {
+  3.70012833739291*^9, 3.7001283489358063`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", " ", 
+      RowBox[{
+       RowBox[{"f", "[", "x", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Plot", "[", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"f", "'"}], "[", "a", "]"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "a"}], ")"}]}], "+", 
+        RowBox[{"f", "[", "a", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}], ",", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+        RowBox[{"Point", "[", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", 
+           RowBox[{"f", "[", "a", "]"}]}], "}"}], "]"}]}], "}"}]}]}], "]"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6998042674637327`*^9, 3.699804296046376*^9}, {
+  3.6998664042422*^9, 3.699866424941311*^9}, {3.699870101794756*^9, 
+  3.6998701472510977`*^9}, {3.699872317443787*^9, 3.699872366179281*^9}, {
+  3.699872399660796*^9, 3.699872437427232*^9}, {3.6998726701554327`*^9, 
+  3.699872685260584*^9}, {3.6998744311636667`*^9, 3.6998744724868307`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.05800000000000005, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], -1, 1}}, Typeset`size$$ = {360., {111., 115.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$4654$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = -1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$4654$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+         $CellContext`f[$CellContext`x], {$CellContext`x, -1, 1}], 
+        Plot[
+        Derivative[
+           1][$CellContext`f][$CellContext`a$$] ($CellContext`x - \
+$CellContext`a$$) + $CellContext`f[$CellContext`a$$], {$CellContext`x, -1, 1},
+          PlotStyle -> Red], Epilog -> {
+          PointSize[Large], 
+          Point[{$CellContext`a$$, 
+            $CellContext`f[$CellContext`a$$]}]}], 
+      "Specifications" :> {{$CellContext`a$$, -1, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {156., 162.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6998042572750187`*^9, 3.699804296576964*^9}, {
+   3.6998664172491903`*^9, 3.6998664264440928`*^9}, 3.699870149353828*^9, 
+   3.6998723242835283`*^9, 3.699872368640607*^9, {3.6998724002878532`*^9, 
+   3.699872438716988*^9}, 3.699872686188813*^9, {3.6998744490373707`*^9, 
+   3.699874519670402*^9}, {3.700138011452189*^9, 3.700138017426613*^9}}]
+}, {2}]]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 163, 2, 35, "Subsubsection"],
+Cell[746, 26, 601, 14, 57, "Text"],
+Cell[1350, 42, 161, 2, 30, "Text"],
+Cell[1514, 46, 391, 8, 66, "Input"],
+Cell[CellGroupData[{
+Cell[1930, 58, 1484, 40, 891, "Input"],
+Cell[3417, 100, 2303, 46, 335, "Output"]
+}, {2}]]
+}, Open  ]]
+}
+]
+*)
+
