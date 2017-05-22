@@ -1,0 +1,130 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3249,        122]
+NotebookOptionsPosition[      2526,         91]
+NotebookOutlinePosition[      2885,        107]
+CellTagsIndexPosition[      2842,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Funciones", "Subsubsection",
+ CellChangeTimes->{{3.70444705195953*^9, 3.7044470529880533`*^9}}],
+
+Cell["definiciones", "Text",
+ CellChangeTimes->{{3.70444714350707*^9, 3.704447151936821*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ids", "[", "sanjose", "]"}], "=", "52"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ids", "[", "puntarenas", "]"}], "=", "26"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ids", "[", "guanacaste", "]"}], "=", "48"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ids", "[", "heredia", "]"}], "=", "36"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.704447008612259*^9, 3.704447016710883*^9}, {
+  3.704447167622341*^9, 3.704447202473517*^9}}],
+
+Cell["Operaciones", "Text",
+ CellChangeTimes->{{3.704447154955995*^9, 3.7044471612861557`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ids", "[", "sanjose", "]"}], "+", 
+  RowBox[{"ids", "[", "guanacaste", "]"}]}]], "Input",
+ CellChangeTimes->{{3.704447165315144*^9, 3.7044471655596743`*^9}, {
+  3.704447217826159*^9, 3.7044472271499777`*^9}}],
+
+Cell[BoxData["100"], "Output",
+ CellChangeTimes->{3.704447227530685*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ids", "[", "sanjose", "]"}], "/", 
+  RowBox[{"ids", "[", "heredia", "]"}]}]], "Input",
+ CellChangeTimes->{{3.704447246360701*^9, 3.704447256431553*^9}}],
+
+Cell[BoxData[
+ FractionBox["13", "9"]], "Output",
+ CellChangeTimes->{3.704447256866338*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ids", "[", "sanjose", "]"}], ">", 
+  RowBox[{"ids", "[", "puntarenas", "]"}]}]], "Input",
+ CellChangeTimes->{{3.704447018672917*^9, 3.704447035667671*^9}, {
+  3.704447079919578*^9, 3.704447080317626*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.7044470250635147`*^9, 3.704447036096342*^9}, 
+   3.704447081052466*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{77, Automatic}, {Automatic, 12}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 101, 1, 35, "Subsubsection"],
+Cell[684, 25, 93, 1, 30, "Text"],
+Cell[780, 28, 555, 17, 96, "Input"],
+Cell[1338, 47, 95, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[1458, 52, 243, 5, 32, "Input"],
+Cell[1704, 59, 72, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1813, 65, 187, 4, 32, "Input"],
+Cell[2003, 71, 91, 2, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2131, 78, 239, 5, 32, "Input"],
+Cell[2373, 85, 125, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
