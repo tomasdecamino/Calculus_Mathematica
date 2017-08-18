@@ -1,0 +1,946 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41532,        938]
+NotebookOptionsPosition[     40324,        891]
+NotebookOutlinePosition[     40682,        907]
+CellTagsIndexPosition[     40639,        904]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Creando una esfera a partir de discos", "Section",
+ CellChangeTimes->{{3.7119693074790497`*^9, 3.711969329043829*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"disk", "[", 
+    RowBox[{"n_", ",", "r_", ",", "h_"}], "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"Yellow", ",", 
+     RowBox[{"EdgeForm", "[", "None", "]"}], ",", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1", ",", 
+           RowBox[{"n", "*", "h"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1", ",", 
+           RowBox[{
+            RowBox[{"n", "*", "h"}], "+", "h"}]}], "}"}]}], "}"}], ",", 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["r", "2"], "-", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"n", " ", "h"}], ")"}], "2"]}]]}], "]"}]}], "}"}]}], ";", 
+  RowBox[{
+   RowBox[{"HalfSphere", "[", 
+    RowBox[{"r_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"disk", "[", 
+      RowBox[{"i", ",", "r", ",", 
+       RowBox[{"r", "/", "n"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "n"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.711968091280491*^9, 3.711968177710615*^9}, {
+   3.7119682833522*^9, 3.711968400341441*^9}, {3.711968478534397*^9, 
+   3.711968496415037*^9}, 3.711968753145282*^9, {3.711970994391955*^9, 
+   3.7119710008825083`*^9}, {3.7119710390019503`*^9, 3.7119710483771*^9}, {
+   3.711971097077709*^9, 3.711971106590815*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gg", "=", 
+  RowBox[{"GraphicsGrid", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "5"}], "]"}], "]"}], ",", 
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "7"}], "]"}], "]"}], ",", 
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "10"}], "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "15"}], "]"}], "]"}], ",", 
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "20"}], "]"}], "]"}], ",", 
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{"HalfSphere", "[", 
+          RowBox[{"30", ",", "50"}], "]"}], "]"}]}], "}"}]}], 
+     "\[IndentingNewLine]", "}"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7119693603931913`*^9, 3.7119695507697144`*^9}, {
+  3.711969626713286*^9, 3.711969627211278*^9}, {3.711970942634201*^9, 
+  3.711970948598323*^9}, {3.711975594938573*^9, 3.711975596056202*^9}, {
+  3.7119758146593523`*^9, 3.7119760214642773`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 6}, {1, 1, 12}}, NCache[
+          12 6^Rational[1, 2], 29.393876913398135`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 12}, {1, 1, 18}}, NCache[
+          6 21^Rational[1, 2], 27.49545416973504]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 18}, {1, 1, 24}}, 24]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 24}, {1, 1, 30}}, 18]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 30}, {1, 1, 36}}, 0]}}], {193.5, -192.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.},
+      ContentSelectable->True], InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[30, 7]}, {1, 1, Rational[60, 7]}}, {{
+            1, 1, 4.285714285714286}, {1, 1, 8.571428571428571}}], NCache[
+          Rational[120, 7] 3^Rational[1, 2], 29.692299558323608`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[60, 7]}, {1, 1, Rational[90, 7]}}, {{
+            1, 1, 8.571428571428571}, {1, 1, 12.857142857142858`}}], NCache[
+          Rational[90, 7] 5^Rational[1, 2], 28.749445424997297`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[90, 7]}, {1, 1, Rational[120, 7]}}, {{
+            1, 1, 12.857142857142858`}, {1, 1, 17.142857142857142`}}], NCache[
+          Rational[60, 7] 10^Rational[1, 2], 27.105237087157537`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[120, 7]}, {1, 1, Rational[150, 7]}}, {{
+            1, 1, 17.142857142857142`}, {1, 1, 21.428571428571427`}}], NCache[
+          Rational[30, 7] 33^Rational[1, 2], 24.619554199448693`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[150, 7]}, {1, 1, Rational[180, 7]}}, {{
+            1, 1, 21.428571428571427`}, {1, 1, 25.714285714285715`}}], NCache[
+          Rational[60, 7] 6^Rational[1, 2], 20.99562636671295]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[180, 7]}, {1, 1, 30}}, {{
+            1, 1, 25.714285714285715`}, {1, 1, 30}}], NCache[
+          Rational[30, 7] 13^Rational[1, 2], 15.45236260913138]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 30}, {1, 1, Rational[240, 7]}}, {{1, 1, 30}, {
+            1, 1, 34.285714285714285`}}], 0]}}], {580.5, -192.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.},
+      ContentSelectable->True], InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 3}, {1, 1, 6}}, NCache[
+          9 11^Rational[1, 2], 29.849623113198597`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 6}, {1, 1, 9}}, NCache[
+          12 6^Rational[1, 2], 29.393876913398135`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 9}, {1, 1, 12}}, NCache[
+          3 91^Rational[1, 2], 28.618176042508367`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 12}, {1, 1, 15}}, NCache[
+          6 21^Rational[1, 2], 27.49545416973504]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 15}, {1, 1, 18}}, NCache[
+          15 3^Rational[1, 2], 25.980762113533157`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 18}, {1, 1, 21}}, 24]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 21}, {1, 1, 24}}, NCache[
+          3 51^Rational[1, 2], 21.42428528562855]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 24}, {1, 1, 27}}, 18]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 27}, {1, 1, 30}}, NCache[
+          3 19^Rational[1, 2], 13.076696830622023`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 30}, {1, 1, 33}}, 0]}}], {967.5, -192.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.},
+      ContentSelectable->True]}, {InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 2}, {1, 1, 4}}, NCache[
+          8 14^Rational[1, 2], 29.93325909419153]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 4}, {1, 1, 6}}, NCache[
+          2 221^Rational[1, 2], 29.732137494637012`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 6}, {1, 1, 8}}, NCache[
+          12 6^Rational[1, 2], 29.393876913398135`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 8}, {1, 1, 10}}, NCache[
+          2 209^Rational[1, 2], 28.91366458960192]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 10}, {1, 1, 12}}, NCache[
+          20 2^Rational[1, 2], 28.284271247461902`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 12}, {1, 1, 14}}, NCache[
+          6 21^Rational[1, 2], 27.49545416973504]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 14}, {1, 1, 16}}, NCache[
+          8 11^Rational[1, 2], 26.5329983228432]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 16}, {1, 1, 18}}, NCache[
+          2 161^Rational[1, 2], 25.37715508089904]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 18}, {1, 1, 20}}, 24]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 20}, {1, 1, 22}}, NCache[
+          10 5^Rational[1, 2], 22.360679774997898`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 22}, {1, 1, 24}}, NCache[
+          4 26^Rational[1, 2], 20.396078054371138`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 24}, {1, 1, 26}}, 18]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 26}, {1, 1, 28}}, NCache[
+          4 14^Rational[1, 2], 14.966629547095765`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 28}, {1, 1, 30}}, NCache[
+          2 29^Rational[1, 2], 10.770329614269007`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[{{1, 1, 30}, {1, 1, 32}}, 0]}}], {193.5, -576.}, 
+      ImageScaled[{0.5, 0.5}], {360., 360.},
+      ContentSelectable->True], InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[3, 2]}, {1, 1, 3}}, {{1, 1, 1.5}, {1, 1, 
+            3}}], NCache[
+          Rational[3, 2] 399^Rational[1, 2], 29.962476533157265`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 3}, {1, 1, Rational[9, 2]}}, {{1, 1, 3}, {
+            1, 1, 4.5}}], NCache[
+          9 11^Rational[1, 2], 29.849623113198597`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[9, 2]}, {1, 1, 6}}, {{1, 1, 4.5}, {1, 1, 
+            6}}], NCache[
+          Rational[3, 2] 391^Rational[1, 2], 29.660579899927782`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 6}, {1, 1, Rational[15, 2]}}, {{1, 1, 6}, {
+            1, 1, 7.5}}], NCache[
+          12 6^Rational[1, 2], 29.393876913398135`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[15, 2]}, {1, 1, 9}}, {{1, 1, 7.5}, {1, 1, 
+            9}}], NCache[
+          Rational[15, 2] 15^Rational[1, 2], 29.047375096555626`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 9}, {1, 1, Rational[21, 2]}}, {{1, 1, 9}, {
+            1, 1, 10.5}}], NCache[3 91^Rational[1, 2], 28.618176042508367`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[21, 2]}, {1, 1, 12}}, {{1, 1, 10.5}, {1, 1, 
+            12}}], NCache[
+          Rational[9, 2] 39^Rational[1, 2], 28.10249099279279]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 12}, {1, 1, Rational[27, 2]}}, {{1, 1, 12}, {
+            1, 1, 13.5}}], NCache[6 21^Rational[1, 2], 27.49545416973504]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[27, 2]}, {1, 1, 15}}, {{1, 1, 13.5}, {1, 1, 
+            15}}], NCache[
+          Rational[3, 2] 319^Rational[1, 2], 26.790856649237625`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 15}, {1, 1, Rational[33, 2]}}, {{1, 1, 15}, {
+            1, 1, 16.5}}], NCache[15 3^Rational[1, 2], 25.980762113533157`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[33, 2]}, {1, 1, 18}}, {{1, 1, 16.5}, {1, 1, 
+            18}}], NCache[
+          Rational[9, 2] 31^Rational[1, 2], 25.054939632735096`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 18}, {1, 1, Rational[39, 2]}}, {{1, 1, 18}, {
+            1, 1, 19.5}}], 24]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[39, 2]}, {1, 1, 21}}, {{1, 1, 19.5}, {1, 1, 
+            21}}], NCache[
+          Rational[3, 2] 231^Rational[1, 2], 22.798026230355994`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 21}, {1, 1, Rational[45, 2]}}, {{1, 1, 21}, {
+            1, 1, 22.5}}], NCache[3 51^Rational[1, 2], 21.42428528562855]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[45, 2]}, {1, 1, 24}}, {{1, 1, 22.5}, {1, 1, 
+            24}}], NCache[
+          Rational[15, 2] 7^Rational[1, 2], 19.84313483298443]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 24}, {1, 1, Rational[51, 2]}}, {{1, 1, 24}, {
+            1, 1, 25.5}}], 18]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[51, 2]}, {1, 1, 27}}, {{1, 1, 25.5}, {1, 1, 
+            27}}], NCache[
+          Rational[3, 2] 111^Rational[1, 2], 15.803480629279107`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 27}, {1, 1, Rational[57, 2]}}, {{1, 1, 27}, {
+            1, 1, 28.5}}], NCache[3 19^Rational[1, 2], 13.076696830622023`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[57, 2]}, {1, 1, 30}}, {{1, 1, 28.5}, {1, 1, 
+            30}}], NCache[
+          Rational[3, 2] 39^Rational[1, 2], 9.367496997597598]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 30}, {1, 1, Rational[63, 2]}}, {{1, 1, 30}, {
+            1, 1, 31.5}}], 0]}}], {580.5, -576.}, ImageScaled[{0.5, 0.5}], {360., 360.},
+      
+      ContentSelectable->True], InsetBox[
+      Graphics3DBox[{
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[3, 5]}, {1, 1, Rational[6, 5]}}, {{
+            1, 1, 0.6}, {1, 1, 1.2}}], NCache[
+          Rational[21, 5] 51^Rational[1, 2], 29.99399939987997]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[6, 5]}, {1, 1, Rational[9, 5]}}, {{
+            1, 1, 1.2}, {1, 1, 1.8}}], NCache[
+          Rational[24, 5] 39^Rational[1, 2], 29.975990392312312`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[9, 5]}, {1, 1, Rational[12, 5]}}, {{
+            1, 1, 1.8}, {1, 1, 2.4}}], NCache[
+          Rational[3, 5] 2491^Rational[1, 2], 29.94595131232267]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[12, 5]}, {1, 1, 3}}, {{1, 1, 2.4}, {1, 1, 
+            3}}], NCache[
+          Rational[18, 5] 69^Rational[1, 2], 29.90384590650507]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 3}, {1, 1, Rational[18, 5]}}, {{1, 1, 3}, {
+            1, 1, 3.6}}], NCache[
+          9 11^Rational[1, 2], 29.849623113198597`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[18, 5]}, {1, 1, Rational[21, 5]}}, {{
+            1, 1, 3.6}, {1, 1, 4.2}}], NCache[
+          Rational[12, 5] 154^Rational[1, 2], 29.783216750378056`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[21, 5]}, {1, 1, Rational[24, 5]}}, {{
+            1, 1, 4.2}, {1, 1, 4.8}}], NCache[
+          Rational[3, 5] 2451^Rational[1, 2], 29.70454510676775]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[24, 5]}, {1, 1, Rational[27, 5]}}, {{
+            1, 1, 4.8}, {1, 1, 5.4}}], NCache[
+          Rational[6, 5] 609^Rational[1, 2], 29.61351043020736]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[27, 5]}, {1, 1, 6}}, {{1, 1, 5.4}, {1, 1, 
+            6}}], NCache[
+          Rational[3, 5] 2419^Rational[1, 2], 29.509998305659046`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 6}, {1, 1, Rational[33, 5]}}, {{1, 1, 6}, {
+            1, 1, 6.6}}], NCache[
+          12 6^Rational[1, 2], 29.393876913398135`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[33, 5]}, {1, 1, Rational[36, 5]}}, {{
+            1, 1, 6.6}, {1, 1, 7.2}}], NCache[
+          Rational[3, 5] 2379^Rational[1, 2], 29.264996155817276`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[36, 5]}, {1, 1, Rational[39, 5]}}, {{
+            1, 1, 7.2}, {1, 1, 7.8}}], NCache[
+          Rational[6, 5] 589^Rational[1, 2], 29.123186638827832`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[39, 5]}, {1, 1, Rational[42, 5]}}, {{
+            1, 1, 7.8}, {1, 1, 8.4}}], NCache[
+          Rational[9, 5] 259^Rational[1, 2], 28.96825849097595]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[42, 5]}, {1, 1, 9}}, {{1, 1, 8.4}, {1, 1, 
+            9}}], NCache[Rational[144, 5], 28.8]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 9}, {1, 1, Rational[48, 5]}}, {{1, 1, 9}, {
+            1, 1, 9.6}}], NCache[
+          3 91^Rational[1, 2], 28.618176042508367`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[48, 5]}, {1, 1, Rational[51, 5]}}, {{
+            1, 1, 9.6}, {1, 1, 10.2}}], NCache[
+          Rational[6, 5] 561^Rational[1, 2], 28.422526277584826`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[51, 5]}, {1, 1, Rational[54, 5]}}, {{
+            1, 1, 10.2}, {1, 1, 10.8}}], NCache[
+          Rational[3, 5] 2211^Rational[1, 2], 28.21276306922099]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[54, 5]}, {1, 1, Rational[57, 5]}}, {{
+            1, 1, 10.8}, {1, 1, 11.4}}], NCache[
+          Rational[24, 5] 34^Rational[1, 2], 27.988569095257443`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[57, 5]}, {1, 1, 12}}, {{1, 1, 11.4}, {1, 1, 
+            12}}], NCache[
+          Rational[3, 5] 2139^Rational[1, 2], 27.749594591633226`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 12}, {1, 1, Rational[63, 5]}}, {{1, 1, 12}, {
+            1, 1, 12.6}}], NCache[6 21^Rational[1, 2], 27.49545416973504]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[63, 5]}, {1, 1, Rational[66, 5]}}, {{
+            1, 1, 12.6}, {1, 1, 13.2}}], NCache[
+          Rational[3, 5] 2059^Rational[1, 2], 27.225723130892224`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[66, 5]}, {1, 1, Rational[69, 5]}}, {{
+            1, 1, 13.2}, {1, 1, 13.8}}], NCache[
+          Rational[36, 5] 14^Rational[1, 2], 26.93993318477238]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[69, 5]}, {1, 1, Rational[72, 5]}}, {{
+            1, 1, 13.8}, {1, 1, 14.4}}], NCache[
+          Rational[9, 5] 219^Rational[1, 2], 26.637567456507735`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[72, 5]}, {1, 1, 15}}, {{1, 1, 14.4}, {1, 1, 
+            15}}], NCache[
+          Rational[6, 5] 481^Rational[1, 2], 26.31805463935357]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 15}, {1, 1, Rational[78, 5]}}, {{1, 1, 15}, {
+            1, 1, 15.6}}], NCache[15 3^Rational[1, 2], 25.980762113533157`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[78, 5]}, {1, 1, Rational[81, 5]}}, {{
+            1, 1, 15.6}, {1, 1, 16.2}}], NCache[
+          Rational[12, 5] 114^Rational[1, 2], 25.624987804875147`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[81, 5]}, {1, 1, Rational[84, 5]}}, {{
+            1, 1, 16.2}, {1, 1, 16.8}}], NCache[
+          Rational[3, 5] 1771^Rational[1, 2], 25.249950495000977`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[84, 5]}, {1, 1, Rational[87, 5]}}, {{
+            1, 1, 16.8}, {1, 1, 17.4}}], NCache[
+          Rational[6, 5] 429^Rational[1, 2], 24.854778212649574`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[87, 5]}, {1, 1, 18}}, {{1, 1, 17.4}, {1, 1, 
+            18}}], NCache[
+          Rational[3, 5] 1659^Rational[1, 2], 24.43849422529956]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 18}, {1, 1, Rational[93, 5]}}, {{1, 1, 18}, {
+            1, 1, 18.6}}], 24]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[93, 5]}, {1, 1, Rational[96, 5]}}, {{
+            1, 1, 18.6}, {1, 1, 19.2}}], NCache[
+          Rational[27, 5] 19^Rational[1, 2], 23.53805429511964]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[96, 5]}, {1, 1, Rational[99, 5]}}, {{
+            1, 1, 19.2}, {1, 1, 19.8}}], NCache[
+          Rational[18, 5] 41^Rational[1, 2], 23.051247254758255`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[99, 5]}, {1, 1, Rational[102, 5]}}, {{
+            1, 1, 19.8}, {1, 1, 20.4}}], NCache[
+          Rational[3, 5] 1411^Rational[1, 2], 22.537967965191537`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[102, 5]}, {1, 1, 21}}, {{1, 1, 20.4}, {1, 1,
+             21}}], NCache[
+          Rational[24, 5] 21^Rational[1, 2], 21.99636333578803]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 21}, {1, 1, Rational[108, 5]}}, {{1, 1, 21}, {
+            1, 1, 21.6}}], NCache[3 51^Rational[1, 2], 21.42428528562855]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[108, 5]}, {1, 1, Rational[111, 5]}}, {{
+            1, 1, 21.6}, {1, 1, 22.2}}], NCache[
+          Rational[6, 5] 301^Rational[1, 2], 20.819221887476967`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[111, 5]}, {1, 1, Rational[114, 5]}}, {{
+            1, 1, 22.2}, {1, 1, 22.8}}], NCache[
+          Rational[3, 5] 1131^Rational[1, 2], 20.178206064960282`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[114, 5]}, {1, 1, Rational[117, 5]}}, {{
+            1, 1, 22.8}, {1, 1, 23.4}}], NCache[
+          Rational[12, 5] 66^Rational[1, 2], 19.497692171126307`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[117, 5]}, {1, 1, 24}}, {{1, 1, 23.4}, {1, 1,
+             24}}], NCache[
+          Rational[3, 5] 979^Rational[1, 2], 18.77338541659442]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 24}, {1, 1, Rational[123, 5]}}, {{1, 1, 24}, {
+            1, 1, 24.6}}], 18]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[123, 5]}, {1, 1, Rational[126, 5]}}, {{
+            1, 1, 24.6}, {1, 1, 25.2}}], NCache[
+          Rational[9, 5] 91^Rational[1, 2], 17.17090562550502]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[126, 5]}, {1, 1, Rational[129, 5]}}, {{
+            1, 1, 25.2}, {1, 1, 25.8}}], NCache[
+          Rational[12, 5] 46^Rational[1, 2], 16.277591959500644`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[129, 5]}, {1, 1, Rational[132, 5]}}, {{
+            1, 1, 25.8}, {1, 1, 26.4}}], NCache[
+          Rational[3, 5] 651^Rational[1, 2], 15.308820986607687`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[132, 5]}, {1, 1, 27}}, {{1, 1, 26.4}, {1, 1,
+             27}}], NCache[
+          Rational[6, 5] 141^Rational[1, 2], 14.2492105044455]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 27}, {1, 1, Rational[138, 5]}}, {{1, 1, 27}, {
+            1, 1, 27.6}}], NCache[3 19^Rational[1, 2], 13.076696830622023`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[138, 5]}, {1, 1, Rational[141, 5]}}, {{
+            1, 1, 27.6}, {1, 1, 28.2}}], NCache[
+          Rational[24, 5] 6^Rational[1, 2], 11.757550765359253`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[141, 5]}, {1, 1, Rational[144, 5]}}, {{
+            1, 1, 28.2}, {1, 1, 28.8}}], NCache[
+          Rational[3, 5] 291^Rational[1, 2], 10.235233265539188`]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[144, 5]}, {1, 1, Rational[147, 5]}}, {{
+            1, 1, 28.8}, {1, 1, 29.4}}], NCache[Rational[42, 5], 8.4]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, Rational[147, 5]}, {1, 1, 30}}, {{1, 1, 29.4}, {1, 1,
+             30}}], NCache[
+          Rational[9, 5] 11^Rational[1, 2], 5.96992462263972]]}, 
+        {RGBColor[1, 1, 0], EdgeForm[None], 
+         CylinderBox[
+          NCache[{{1, 1, 30}, {1, 1, Rational[153, 5]}}, {{1, 1, 30}, {
+            1, 1, 30.6}}], 0]}}], {967.5, -576.}, ImageScaled[{0.5, 0.5}], {360., 360.},
+      
+      ContentSelectable->True]}}, {}},
+  ContentSelectable->True,
+  ImageSize->800,
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{{3.711975962527186*^9, 3.711975970666915*^9}, 
+   3.7119760016905813`*^9, 3.711976042672594*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<gg.jpg\>\"", ",", "gg"}], "]"}]], "Input",
+ CellChangeTimes->{{3.711969631411001*^9, 3.7119696384696207`*^9}}],
+
+Cell[BoxData["\<\"gg.jpg\"\>"], "Output",
+ CellChangeTimes->{3.7119696393463306`*^9, 3.711975614117957*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"HalfSphere", "[", 
+    RowBox[{"30", ",", "8"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.71196867299135*^9, 3.7119687102229967`*^9}, {
+   3.711968792264431*^9, 3.711968802301072*^9}, {3.7119689036859083`*^9, 
+   3.7119690218118677`*^9}, {3.711969112723925*^9, 3.71196911316718*^9}, 
+   3.711971178149139*^9, {3.71198747846445*^9, 3.711987533078217*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[15, 4]}, {1, 1, Rational[15, 2]}}, {{
+       1, 1, 3.75}, {1, 1, 7.5}}], NCache[
+     Rational[45, 4] 7^Rational[1, 2], 29.764702249476645`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[15, 2]}, {1, 1, Rational[45, 4]}}, {{
+       1, 1, 7.5}, {1, 1, 11.25}}], NCache[
+     Rational[15, 2] 15^Rational[1, 2], 29.047375096555626`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[45, 4]}, {1, 1, 15}}, {{1, 1, 11.25}, {1, 1, 
+       15}}], NCache[
+     Rational[15, 4] 55^Rational[1, 2], 27.810744326608734`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, 15}, {1, 1, Rational[75, 4]}}, {{1, 1, 15}, {
+       1, 1, 18.75}}], NCache[15 3^Rational[1, 2], 25.980762113533157`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[75, 4]}, {1, 1, Rational[45, 2]}}, {{
+       1, 1, 18.75}, {1, 1, 22.5}}], NCache[
+     Rational[15, 4] 39^Rational[1, 2], 23.418742493993992`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[45, 2]}, {1, 1, Rational[105, 4]}}, {{
+       1, 1, 22.5}, {1, 1, 26.25}}], NCache[
+     Rational[15, 2] 7^Rational[1, 2], 19.84313483298443]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, Rational[105, 4]}, {1, 1, 30}}, {{1, 1, 26.25}, {1, 1, 
+       30}}], NCache[
+     Rational[15, 4] 15^Rational[1, 2], 14.523687548277813`]]}, 
+   {RGBColor[1, 1, 0], EdgeForm[None], 
+    CylinderBox[
+     NCache[{{1, 1, 30}, {1, 1, Rational[135, 4]}}, {{1, 1, 30}, {
+       1, 1, 33.75}}], 0]}},
+  ImageSize->{834.289266042703, 554.},
+  ViewPoint->{0.6556681218489985, -2.8329261849282936`, 1.7304995072922256`},
+  ViewVertical->{-0.24854766537449002`, -0.1834790960981797, 
+   1.9021428604023431`}]], "Output",
+ CellChangeTimes->{{3.711968685858663*^9, 3.711968710466776*^9}, 
+   3.7119687625158663`*^9, {3.7119687941268663`*^9, 3.711968802831008*^9}, {
+   3.71196890434979*^9, 3.711969022613983*^9}, 3.711969114187688*^9, 
+   3.711971016002329*^9, 3.711971054635989*^9, 3.711971178647792*^9, {
+   3.7119874884056063`*^9, 3.711987533366562*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\</Users/tomasdecaminobeck/Downloads/\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7119688095467367`*^9, 3.7119688261260757`*^9}}],
+
+Cell[BoxData["\<\"/Users/tomasdecaminobeck/Downloads\"\>"], "Output",
+ CellChangeTimes->{3.711968826591557*^9, 3.711987559947818*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<model8.stl\>\"", ",", "model"}], "]"}]], "Input",
+ CellChangeTimes->{{3.711968798280357*^9, 3.711968798700321*^9}, {
+  3.711968834609885*^9, 3.7119688364318542`*^9}, {3.7119688984932947`*^9, 
+  3.7119689757784758`*^9}, {3.711969028049142*^9, 3.711969029887671*^9}, {
+  3.711987541809976*^9, 3.711987542560156*^9}}],
+
+Cell[BoxData["\<\"model8.stl\"\>"], "Output",
+ CellChangeTimes->{{3.711968831316813*^9, 3.711968837039976*^9}, {
+   3.711968899049726*^9, 3.711968976632531*^9}, 3.7119690535520487`*^9, {
+   3.711987543238079*^9, 3.7119875618799334`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"HalfSphere", "[", 
+      RowBox[{"30", ",", "n"}], "]"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Automatic", ",", "Automatic", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "30"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.711977463736788*^9, 3.711977573807836*^9}, {
+  3.711977604059268*^9, 3.711977604825223*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 17.6, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 100}}, Typeset`size$$ = {360., {151., 155.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`n$537096$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$537096$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[
+        $CellContext`HalfSphere[30, $CellContext`n$$], 
+        PlotRange -> {Automatic, Automatic, {0, 30}}], 
+      "Specifications" :> {{$CellContext`n$$, 3, 100}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {196., 202.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.711977574534582*^9, 3.711977605220736*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"aprox", "[", 
+    RowBox[{"r_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{"4", " ", 
+    FractionBox["r", "n"], 
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "1"}], "n"], 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["r", "2"], "-", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["i", "n"], "r"}], ")"}], "2"]}]]}]}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.711989301604163*^9, 3.711989416270258*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"aprox", "[", 
+       RowBox[{"1", ",", "n"}], "]"}], "//", "N"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "10000", ",", "1000000"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"Mesh", "\[Rule]", "All"}], ",", 
+     RowBox[{"MaxRecursion", "\[Rule]", "1"}], ",", 
+     RowBox[{"Ticks", "\[Rule]", 
+      RowBox[{"{", " ", 
+       RowBox[{"Automatic", ",", 
+        RowBox[{"{", "Pi", "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Line", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"10000", ",", "Pi"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1000000", ",", "Pi"}], "}"}]}], "}"}], "]"}], "]"}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", "Large"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.711989418300775*^9, 3.7119894379895144`*^9}, 
+   3.7119895091510067`*^9, {3.711989543972659*^9, 3.711989544206113*^9}, {
+   3.71199023605534*^9, 3.71199028736582*^9}, 3.7119958010313377`*^9, {
+   3.7119958969470863`*^9, 3.711995897413765*^9}, {3.7119959422218723`*^9, 
+   3.711996017442683*^9}, {3.711996103373618*^9, 3.711996126615975*^9}, {
+   3.711996240187945*^9, 3.711996274005982*^9}, {3.711998982603468*^9, 
+   3.7119989870132523`*^9}, {3.711999022896782*^9, 3.711999023091964*^9}, {
+   3.711999053106213*^9, 3.711999127264738*^9}, {3.711999192959738*^9, 
+   3.711999378662027*^9}, {3.711999409976376*^9, 3.711999410507988*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot","exclul",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{RowBox[{\\\"(\\\", RowBox[{\
+\\\"1\\\", \\\"-\\\", FractionBox[SuperscriptBox[\\\"i\\\", \\\"2\\\"], \
+SuperscriptBox[\\\"n\\\", \\\"2\\\"]]}], \\\")\\\"}], \\\"-\\\", \\\"0\\\"}], \
+\\\",\\\", RowBox[{\\\"n\\\", \\\"-\\\", \\\"0\\\"}], \\\",\\\", \
+RowBox[{\\\"n\\\", \\\"-\\\", \\\"0\\\"}], \\\",\\\", RowBox[{RowBox[{\\\"-\\\
+\", RowBox[{\\\"Im\\\", \\\"[\\\", FractionBox[SuperscriptBox[\\\"i\\\", \
+\\\"2\\\"], SuperscriptBox[\\\"n\\\", \\\"2\\\"]], \\\"]\\\"}]}], \\\"-\\\", \
+\\\"0\\\"}]}], \\\"}\\\"}]\\) must be a list of equalities or real-valued \
+functions.\"",2,83,43,31041125237647855713,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.7119992776478443`*^9, 3.711999379678317*^9}, 
+   3.711999411198049*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{GraphicsComplexBox[CompressedData["
+1:eJwV031Q0wUYB/DJRCHeoynyut+AOV42QIJcA/09Hm/ttDrhQEcSTOBUSLi6
+JIxTsHVGMQywhc45IEjeZJzS9AZyBUYiFRcoFW0FAbEQB78hyXgZ/Z4/nnvu
+88f3j+fu+RLSgsM5NgwGYz89uE2+jgqbT/rJPlWlqJqwJ8MPJVh29urJrMtB
+3/1K23Sr/tsTzUbyC/mI4h/aDDtrez1BkX1iUfY87e3COB41tky+bWhVLtB+
+WGc5etK8SvK6/npE0X6y+NaZOu0mOfLTELlEe7r7y4DSQhsQPnKXPqNdXXoo
+sN6yFdaItleXaRcIJUoibTt4ObB+R7fKr+drZ+0hbPie9D/arDHh7daDjpDH
+sP6M7lUTbp83OQNf/Ab3Oe3jF9gz92tdwZtVUYze7EgvoR64QXZuUTda3LIH
+ml90B4otsqBfntZUpaW+BE4ZbMEK7egrv12LlrHgQ59hCXrWS/VYPbQDuhpN
+MrTGw2lw78ZOOHK6vAXNnfKYS0/aBWcyNUPoWNNDRZHcE7J1hjl03ns8a1+P
+F/w5WGRroZ00QNTU2vpAscTgh46tGfhbtdcXyI7EaPQvdW69yhw/aF/1EKNf
+2Fcy5ZbKhgfCsxnoOyfiv3/HxIaZ7ohCdMxZ/b3KGgK4WWkX0K7tCettURwI
+veNSjV68us1j8kcOXGu4UoduLrws/qPQH7xbpzvQecwPJE/tAyDR5d1u9Dmt
+oHNNHQD6pYUB9Mk3b3sPHwiEux3MUXTmDXmubjwQutY+NqAFM1E/nDrPhYlP
+9xnRdhORtpG7dgM7/iaF3rO2tfy5ZjdcTT+2io7c+Mq/LJkHupYK5iptsqdW
+yZnnQUVpiwM6QJoeXF4VBNTRWXf0ER5lfRIZDAu5p73QtW36ztyhYCibU3HQ
+nSxF8dcFIVA22BeEHo1p8rPahULjOedwdILsosNhdSh4l1qj0FW3XnHOO8CH
+GUVKDHpWFWtSjvNhi+QuoGXDN5bPywSwwdEkolME3AZHGCUXdfGiAdr9+Q0Z
+uo+myIsuO1wmaRdNvu409v5TcvP+MfO/mGfXn3qtZIm8VEZFmGgb533hZvYK
+GXcwZ3SR9nhSiFGWskEaJZ8pzbT5nlNhxsAtMPIsVY/9EF03N7p+w4Rkqusx
+9oNhSM7M4m2DJa5fJfah4vg6M19tB80hKwT+/0TE/KVwTwfw7N+vRM/p+FKf
+YidoastfR2u1ZkoeJgCOf08c3vM/7FG35Q==
+     "], {{{}, {}, 
+       TagBox[
+        {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+         Opacity[1.], 
+         LineBox[{1, 51, 2, 52, 3, 53, 4, 54, 5, 55, 6, 56, 7, 57, 8, 58, 9, 
+          59, 10, 60, 11, 61, 12, 62, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 
+          23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 
+          40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 63, 50}]},
+        Annotation[#, "Charting`Private`Tag$151689#1"]& ]}, {
+       {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+        Opacity[1.], 
+        PointBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 
+         18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 
+         35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 
+         52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 
+         63}]}, {}, {}}}], {}, {}}, 
+   LineBox[NCache[{{10000, Pi}, {1000000, Pi}}, {{10000, 3.141592653589793}, {
+      1000000, 3.141592653589793}}]]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 3.1413921978853248`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->{855.79296875, Automatic},
+  LabelStyle->Large,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, {{
+      NCache[Pi, 3.141592653589793], 
+      FormBox["\[Pi]", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{{3.711999277757593*^9, 3.7119993815907373`*^9}, 
+   3.711999413043727*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1194, 781},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 1, 64, "Section"],
+Cell[707, 25, 1418, 39, 67, "Input"],
+Cell[CellGroupData[{
+Cell[2150, 68, 1372, 33, 96, "Input"],
+Cell[3525, 103, 23593, 472, 540, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27155, 580, 164, 3, 32, "Input"],
+Cell[27322, 585, 107, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27466, 591, 441, 8, 32, "Input"],
+Cell[27910, 601, 2302, 48, 569, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30249, 654, 180, 3, 32, "Input"],
+Cell[30432, 659, 133, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30602, 665, 368, 6, 32, "Input"],
+Cell[30973, 673, 237, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31247, 681, 579, 15, 32, "Input"],
+Cell[31829, 698, 1679, 34, 415, "Output"]
+}, Open  ]],
+Cell[33523, 735, 519, 18, 70, "Input"],
+Cell[CellGroupData[{
+Cell[34067, 757, 1556, 34, 54, "Input"],
+Cell[35626, 793, 844, 14, 46, "Message"],
+Cell[36473, 809, 3823, 78, 571, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
