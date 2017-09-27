@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20584,        540]
-NotebookOptionsPosition[     20152,        519]
-NotebookOutlinePosition[     20511,        535]
-CellTagsIndexPosition[     20468,        532]
+NotebookDataLength[     20691,        541]
+NotebookOptionsPosition[     20230,        519]
+NotebookOutlinePosition[     20620,        536]
+CellTagsIndexPosition[     20577,        533]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -253,7 +253,7 @@ Cell[BoxData[{
            RowBox[{"{", 
             RowBox[{"a", ",", "150"}], "}"}]}], "}"}], "]"}]}], "}"}], "]"}], 
      ",", 
-     RowBox[{"ImageSize", "\[Rule]", "360"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "560"}]}], "]"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -313,17 +313,17 @@ Cell[BoxData[{
       ",", "1", ",", "20", ",", "1", ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
    RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{3.714827476207559*^9},
  CellID->579772341],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`a$$ = 
-    7.51, $CellContext`f$$ = (-3 + $CellContext`x)^2, $CellContext`n$$ = 
-    20, $CellContext`type$$ = 1, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{{
+   DynamicModuleBox[{$CellContext`a$$ = 5, $CellContext`f$$ = $CellContext`x^
+    Rational[1, 2], $CellContext`n$$ = 20, $CellContext`type$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`f$$], $CellContext`x, "function"}, {$CellContext`x -> 
        "x", (-3 + $CellContext`x)^2 -> 
        "(x-3\!\(\*SuperscriptBox[\()\), \(2\)]\)", 
@@ -337,19 +337,19 @@ Cell[BoxData[
        "underestimate", 6 -> "trapezoidal"}}, {{
        Hold[$CellContext`a$$], 5, "upper limit a"}, 0.01, 8}, {{
        Hold[$CellContext`n$$], 3, "number of quadrilaterals"}, 1, 20, 1}}, 
-    Typeset`size$$ = {360., {125., 130.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {840., {276., 283.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    False, $CellContext`f$2233$$ = False, $CellContext`type$2234$$ = 
-    False, $CellContext`a$2235$$ = 0, $CellContext`n$2236$$ = 0}, 
+    False, $CellContext`f$344848$$ = False, $CellContext`type$344849$$ = 
+    False, $CellContext`a$344850$$ = 0, $CellContext`n$344851$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`a$$ = 
         5, $CellContext`f$$ = $CellContext`x, $CellContext`n$$ = 
         3, $CellContext`type$$ = 2}, "ControllerVariables" :> {
-        Hold[$CellContext`f$$, $CellContext`f$2233$$, False], 
-        Hold[$CellContext`type$$, $CellContext`type$2234$$, False], 
-        Hold[$CellContext`a$$, $CellContext`a$2235$$, 0], 
-        Hold[$CellContext`n$$, $CellContext`n$2236$$, 0]}, 
+        Hold[$CellContext`f$$, $CellContext`f$344848$$, False], 
+        Hold[$CellContext`type$$, $CellContext`type$344849$$, False], 
+        Hold[$CellContext`a$$, $CellContext`a$344850$$, 0], 
+        Hold[$CellContext`n$$, $CellContext`n$344851$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -378,7 +378,7 @@ $CellContext`i, $CellContext`a$$/$CellContext`n$$, $CellContext`type$$], \
 {$CellContext`i, 0, $CellContext`n$$ - 1}]}], 
         Graphics[{Red, 
           Line[{{$CellContext`a$$, 0}, {$CellContext`a$$, 150}}]}], ImageSize -> 
-        360], "Specifications" :> {{{$CellContext`f$$, $CellContext`x, 
+        560], "Specifications" :> {{{$CellContext`f$$, $CellContext`x, 
           "function"}, {$CellContext`x -> "x", (-3 + $CellContext`x)^2 -> 
           "(x-3\!\(\*SuperscriptBox[\()\), \(2\)]\)", 
           27 + (-3 + $CellContext`x)^3 -> 
@@ -395,7 +395,7 @@ $CellContext`i, $CellContext`a$$/$CellContext`n$$, $CellContext`type$$], \
          "Labeled"}, {{$CellContext`n$$, 3, "number of quadrilaterals"}, 1, 
          20, 1, Appearance -> "Labeled"}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{440., {210., 216.}},
+     ImageSizeCache->{906., {390., 399.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -513,12 +513,13 @@ $CellContext`n, $CellContext`h, $CellContext`type]}, {
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.700125966758402*^9}]
+ CellChangeTimes->{3.700125966758402*^9, 3.714827481515716*^9}]
 }, {2}]]
 }, Open  ]]
 },
-WindowSize->{808, 751},
-WindowMargins->{{15, Automatic}, {Automatic, 35}},
+WindowSize->{1253, 795},
+WindowMargins->{{15, Automatic}, {21, Automatic}},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 21, 2016)",
 StyleDefinitions->"Default.nb"
@@ -535,16 +536,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 109, 1, 35, "Subsubsection"],
+Cell[580, 22, 109, 1, 52, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[714, 27, 10198, 288, 10651, "Input",
+Cell[714, 27, 10240, 289, 798, "Input",
  CellID->579772341],
-Cell[10915, 317, 9212, 198, 443, "Output"]
+Cell[10957, 318, 9248, 197, 813, "Output"]
 }, {2}]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
